@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Like & Comment in a Picture</title>
+    <!-- linking css styles -->
+    <link rel="stylesheet" href="css/style.css">
+
+
+    <!--============= Linking font awesome kits =============-->
+    <script src="https://kit.fontawesome.com/894374ca54.js" crossorigin="anonymous"></script>
+
+    <!--============= Linking the bootstrap CSS CDN =============-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
+</head>
+
+<body>
+    <main class="container">
+        <section class="container bg-light w-75 p-3">
+            <!-- Updation title -->
+            <div class="d-flex justify-content-start align-items-center">
+                <img class="img-fluid d-block rounded-circle me-2 small-dp" src="images/person.jpg">
+                <div class="status-updation-font">
+                    <p class="fs-6"><span class="uid-name">Chinmoy</span> updated his profile picture</p>
+                    <div class="d-flex justify-content-start align-items-center">
+                        <p class="me-2">2d</p>
+                        <p><i class="fa-solid fa-globe"></i></p>
+                    </div>
+                </div>
+            </div>
+            <!-- Main Picture -->
+            <div class="text-center">
+                <img class="img-fluid w-75 rounded-circle" src="images/person.jpg" alt="Picture is unavailable">
+            </div>
+            <!-- Counting of like and comment section -->
+            <div id="like-comment-view-container" class="my-4 d-flex justify-content-between align-items-center">
+                <div id="likes-count">Be the first person to like this</div>
+                <div id="comments-count">No comments</div>
+            </div>
+            <hr>
+            <!-- Giving like, comment and share section -->
+            <div id="like-comment-container" class="row text-center">
+                <div class="col-4">
+                    <button id="like-btn" class="btn border border-primary" title="Like"><i
+                            class="fa-solid fa-thumbs-up fs-6 mx-1"></i></button>
+                </div>
+                <div class="col-4">
+                    <button id="comment-btn" class="btn border border-primary" title="Comment"><i
+                            class="fa-solid fa-message fs-6 mx-1"></i></button>
+                </div>
+                <div class="col-4">
+                    <button id="share-btn" class="btn border border-primary" title="Share"><i
+                            class="fa-solid fa-share"></i></button>
+                </div>
+            </div>
+            <!-- Adding comment by writing some new texts -->
+            <div class="text-center">
+                <input id="input-content" type="text" placeholder="Write a comment" class="rounded-pill px-3 py-2 my-3">
+                <br>
+                <button id="post-comment-btn" class="btn btn-outline-primary" disabled><i
+                        class="fa-solid fa-angles-right"></i></button>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        document.getElementById('input-content').addEventListener('keyup', function () {
+            const commentBoxField = document.getElementById('input-content');
+            if (commentBoxField.value !== '') {
+                document.getElementById('post-comment-btn').removeAttribute('disabled');
+            } else {
+                document.getElementById('post-comment-btn').setAttribute('disabled', true);
+            }
+        });
+
+        let countComments = 0;
+        document.getElementById('post-comment-btn').addEventListener('click', function () {
+            countComments++;
+            document.getElementById('comments-count').innerText = countComments + ' comments';
+            document.getElementById('input-content').value = '';
+            document.getElementById('input-content').value.length = 0;
+            console.log(document.getElementById('input-content').value.length);
+        });
+    </script>
+    <script src="js/likeCount.js"></script>
+    <!--============= Linking the bootstrap js CDN =============-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

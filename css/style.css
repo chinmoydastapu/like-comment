@@ -1,0 +1,18 @@
+
+
+/*================= User id name style =================*/
+.uid-name {
+    font-weight: bolder;
+    color: black;
+}
+
+.small-dp {
+    width: 4rem;
+}
+
+.status-updation-font {
+    font-size: smaller;
+}
+.status-updation-font p {
+    margin: 0;
+}
