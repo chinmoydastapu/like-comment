@@ -6,9 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Like & Comment in a Picture</title>
-    <!-- linking css styles -->
+    <!--============= Linking the custom CSS styles =============-->
     <link rel="stylesheet" href="css/style.css">
-
 
     <!--============= Linking font awesome kits =============-->
     <script src="https://kit.fontawesome.com/894374ca54.js" crossorigin="anonymous"></script>
@@ -36,9 +35,9 @@
                 <img class="img-fluid w-75 rounded-circle" src="images/person.jpg" alt="Picture is unavailable">
             </div>
             <!-- Counting of like and comment section -->
-            <div id="like-comment-view-container" class="my-4 d-flex justify-content-between align-items-center">
-                <div id="likes-count">Be the first person to like this</div>
-                <div id="comments-count">No comments</div>
+            <div id="like-comment-view-container" class="my-4 row">
+                <div id="likes-count" class="col-8 text-start">Be the first person to like this</div>
+                <div id="comments-count" class="col-4 text-end">No comments</div>
             </div>
             <hr>
             <!-- Giving like, comment and share section -->
@@ -56,6 +55,8 @@
                             class="fa-solid fa-share"></i></button>
                 </div>
             </div>
+            <!-- Showing the comments -->
+            <div id="show-comments" class="my-3"></div>
             <!-- Adding comment by writing some new texts -->
             <div class="text-center">
                 <input id="input-content" type="text" placeholder="Write a comment" class="rounded-pill px-3 py-2 my-3">
@@ -66,8 +67,9 @@
         </section>
     </main>
 
+    <!--============= Linking the js files =============-->
     <script src="js/likeCount.js"></script>
-    <script src="js/commentCount.js"></script>
+    <script src="js/comments.js"></script>
     <!--============= Linking the bootstrap js CDN =============-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
